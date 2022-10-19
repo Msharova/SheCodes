@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form class="location-elements">
+        <div class="row">
+          <div class="col-6">
+            <input
+              class="searchEngine"
+              type="text"
+              placeholder="Enter city name"
+            />
+          </div>
+          <div class="col"><button class="searchButton">Search</button></div>
+          <div class="col">
+            <button class="locationButton">Your location</button>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col currentTempGroup">
+          <span class="cityName">City name</span>
+          <br />
+          <span class="currentTemperature">15</span>
+          <span class="celsius">°C |</span><span class="fahrenheit">°F</span>
+          <span class="mainEmoji">🌞</span>
+        </div>
+        <div class="col additionalParameters">
+          Precipitation: 72% <br />
+          Humidity: 86% <br />
+          Wind: 6 km/h
+        </div>
+        <div class="col currentDate">
+          <span class="dateTime">Sunday 11:00</span> <br />
+          Mostly Sunny <br />
+          Don't forget your glasses!
+        </div>
+      </div>
+
+      <!-- start of the daily weather line // ideally to have charts here-->
+      <div class="row completeDays">
+        <div class="col day0">
+          <span class="hour0">11</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Sun</div>
+          <div class="emoji0">🌞</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">12</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Mon</div>
+          <div class="emoji0">🌦</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">13</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Tue</div>
+          <div class="emoji0">🌧</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">14</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Wed</div>
+          <div class="emoji0">🌤</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">15</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Thu</div>
+          <div class="emoji0">🌩</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">16</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Fri</div>
+          <div class="emoji0">☁</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">17</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Sat</div>
+          <div class="emoji0">🌞</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+        <div class="col day0">
+          <span class="hour0">18</span>
+          <div class="column0">box</div>
+          <div class="weekDay0">Sun</div>
+          <div class="emoji0">🌞</div>
+          <div>
+            <span class="firstTemp">15/</span><span class="secondTemp">10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

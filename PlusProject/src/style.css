@@ -1,0 +1,105 @@
+body {
+  margin-top: 200px;
+}
+
+.container {
+  border: 3px solid rgb(97, 97, 252, 0.1);
+  border-radius: 25px;
+  background: radial-gradient(
+    840px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254, 0.4) 74.6%
+  );
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-elements {
+  display: block;
+  margin-top: 30px;
+}
+.searchEngine,
+.searchButton,
+.locationButton {
+  font-size: 20px;
+  line-height: 50px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+.searchButton,
+.locationButton {
+  background: none;
+  border-radius: 25px;
+}
+.currentTempGroup,
+.additionalParameters,
+.currentDate,
+.column0,
+.weekDay0 {
+  border: 3px solid orange;
+}
+.searchEngine {
+  margin-right: 20px;
+  width: 100%;
+}
+.searchButton {
+  padding: 1px 50px;
+  margin-right: 0;
+  border: 1px solid rgb(64, 119, 64);
+  background: radial-gradient(
+    circle at -1% 57.5%,
+    rgb(19, 170, 82, 0.8) 0%,
+    rgb(0, 102, 43, 0.8) 90%
+  );
+  color: #fefffc;
+}
+.locationButton {
+  color: #102b1c;
+  padding: 1px 20px;
+  border: 1px solid linear-gradient(to top, #7b8f7d 0%, #deecdd 100%);
+  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+}
+.currentTempGroup {
+  margin-top: 25px;
+  margin-left: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-align: left;
+}
+.celsius,
+.fahrenheit {
+  font-size: 20px;
+}
+.fahrenheit {
+  font-weight: normal;
+}
+.additionalParameters {
+  margin-top: 75px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+}
+.dateTime {
+  font-weight: bold;
+}
+.currentDate {
+  margin-right: 20px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.completeDays {
+  margin: 20px 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.column0 {
+  padding: 10px 0;
+  margin: 5px 0;
+}
+
+.firstTemp {
+  font-weight: bold;
+}
