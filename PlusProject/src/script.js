@@ -27,14 +27,23 @@ let months = [
 ];
 
 let mainDay = days[now.getDay()];
-let hour = now.getHours();
+let hours = now.getHours();
 let minutes = now.getMinutes();
+
+//adding 0 if hours/minutes value is lower that 10
+
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+if (minutes < 10) {
+  minutes = `0${hours}`;
+}
 
 let currentDay = document.querySelector("#mainDay");
 currentDay.innerHTML = `${mainDay}, `;
 
 let currentTime = document.querySelector("#mainTime");
-currentTime.innerHTML = `${hour}:${minutes}`;
+currentTime.innerHTML = `${hours}:${minutes}`;
 
 //changing submited city
 
@@ -51,7 +60,7 @@ searchEngine.addEventListener("submit", citySearch);
 // celsius and fahrenheit links
 
 function CtoF(celsius) {
-  return (celsius * 9) / 5 + 32;
+  return Math.round((celsius * 9) / 5 + 32);
 }
 
 function celciusFunction() {
