@@ -48,7 +48,7 @@ function citySearch(event) {
 let searchEngine = document.querySelector(".location-elements");
 searchEngine.addEventListener("submit", citySearch);
 
-// celsius and fahrenheit buttons
+// celsius and fahrenheit links
 
 function CtoF(celsius) {
   return (celsius * 9) / 5 + 32;
