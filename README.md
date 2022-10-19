@@ -7,11 +7,11 @@ Learning projects for SheCodes
 Project of weather app
 
 ```
-./PlusProject
-./PlusProject/index.html        # project page
-./PlusProject/src
-./PlusProject/src/script.js     # JS code
-./PlusProject/src/style.css     # Style file
+./PlusProject                   # project folder
+./PlusProject/index.html            # project page
+./PlusProject/src                   # code folder
+./PlusProject/src/script.js             # JS code
+./PlusProject/src/style.css             # Style file
 ```
 
 ## Basic project
