@@ -73,6 +73,7 @@ body {
 .fahrenheit {
   font-weight: normal;
 }
+
 .additionalParameters {
   margin-top: 75px;
   margin-left: 20px;
@@ -103,4 +104,7 @@ body {
 
 .firstTemp {
   font-weight: bold;
+}
+.celsius {
+  font-weight: normal;
 }

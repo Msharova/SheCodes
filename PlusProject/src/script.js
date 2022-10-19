@@ -47,3 +47,25 @@ function citySearch(event) {
 
 let searchEngine = document.querySelector(".location-elements");
 searchEngine.addEventListener("submit", citySearch);
+
+// celsius and fahrenheit buttons
+
+function CtoF(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+
+function celciusFunction() {
+  let currentCelcius = document.querySelector("#currentTemperature");
+  currentCelcius.innerHTML = 15;
+}
+
+function fahrenheitFunction() {
+  let currentCelcius = document.querySelector("#currentTemperature");
+  currentCelcius.innerHTML = CtoF(15);
+}
+
+let celsiusLink = document.querySelector("#celcius-link");
+celsiusLink.addEventListener("click", celciusFunction);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", fahrenheitFunction);
