@@ -31,16 +31,15 @@ body {
   background: none;
   border-radius: 25px;
 }
-.currentTempGroup,
-.additionalParameters,
+
 .currentDate,
-.column0,
-.weekDay0 {
+.column0 {
   border: 3px solid orange;
 }
 .searchEngine {
   margin-right: 20px;
   width: 100%;
+  padding-left: 20px;
 }
 .searchButton {
   padding: 1px 50px;
@@ -79,14 +78,16 @@ body {
   margin-left: 20px;
   margin-right: 20px;
   text-align: left;
+  font-size: 20px;
 }
-.dateTime {
+#mainDay {
   font-weight: bold;
 }
-.currentDate {
-  margin-right: 20px;
-  margin-top: 25px;
+.currentDay {
+  margin-right: 10px;
+  margin-top: 50px;
   margin-bottom: 50px;
+  font-size: 20px;
 }
 
 .completeDays {

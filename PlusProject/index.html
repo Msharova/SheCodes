@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <form class="location-elements">
-        <div class="row">
+        <div class="row firstRow">
           <div class="col-6">
             <input
               class="searchEngine"
@@ -31,9 +31,9 @@
           </div>
         </div>
       </form>
-      <div class="row">
+      <div class="row secondRow">
         <div class="col currentTempGroup">
-          <span class="cityName">City name</span>
+          <span class="cityName">Brno, Czech Republic</span>
           <br />
           <span class="currentTemperature">15</span>
           <span class="celsius">°C |</span><span class="fahrenheit">°F</span>
@@ -44,8 +44,9 @@
           Humidity: 86% <br />
           Wind: 6 km/h
         </div>
-        <div class="col currentDate">
-          <span class="dateTime">Sunday 11:00</span> <br />
+        <div class="col currentDay">
+          <span id="mainDay">#</span> <span id="mainTime">#</span>
+          <br />
           Mostly Sunny <br />
           Don't forget your glasses!
         </div>
@@ -127,6 +128,6 @@
         </div>
       </div>
     </div>
-    <script src="scripts/script.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
