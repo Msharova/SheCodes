@@ -1,1 +1,1 @@
-//here will be our majectic code
+//here will be our majestic code
