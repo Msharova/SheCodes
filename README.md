@@ -13,3 +13,7 @@ Project of weather app
 ./PlusProject/src/script.js     # JS code
 ./PlusProject/src/style.css     # Style file
 ```
+
+## Basic project
+
+Static page with included CSS
