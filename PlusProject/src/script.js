@@ -1,4 +1,4 @@
-//changing current day and time
+//day and time values
 
 let now = new Date();
 
@@ -40,11 +40,35 @@ if (minutes < 10) {
   minutes = `0${hours}`;
 }
 
+//changing current day and time
+
 let currentDay = document.querySelector("#mainDay");
 currentDay.innerHTML = `${mainDay}, `;
 
 let currentTime = document.querySelector("#mainTime");
 currentTime.innerHTML = `${hours}:${minutes}`;
+
+// celsius and fahrenheit links
+
+function CtoF(celsius) {
+  return Math.round((celsius * 9) / 5 + 32);
+}
+
+function celciusFunction() {
+  let currentCelcius = document.querySelector("#current-temperature");
+  currentCelcius.innerHTML = 15;
+}
+
+function fahrenheitFunction() {
+  let currentCelcius = document.querySelector("#current-temperature");
+  currentCelcius.innerHTML = CtoF(15);
+}
+
+let celsiusLink = document.querySelector("#celcius-link");
+celsiusLink.addEventListener("click", celciusFunction);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", fahrenheitFunction);
 
 //changing submited city
 
@@ -74,27 +98,16 @@ function citySearch(event) {
 let searchEngine = document.querySelector(".location-elements");
 searchEngine.addEventListener("submit", citySearch);
 
-// celsius and fahrenheit links
+// clicking on location button
 
-function CtoF(celsius) {
-  return Math.round((celsius * 9) / 5 + 32);
+function yourLocation(event) {
+  event.preventDefault();
+  console.log("here is your location");
+  navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-function celciusFunction() {
-  let currentCelcius = document.querySelector("#current-temperature");
-  currentCelcius.innerHTML = 15;
-}
-
-function fahrenheitFunction() {
-  let currentCelcius = document.querySelector("#current-temperature");
-  currentCelcius.innerHTML = CtoF(15);
-}
-
-let celsiusLink = document.querySelector("#celcius-link");
-celsiusLink.addEventListener("click", celciusFunction);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", fahrenheitFunction);
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", yourLocation);
 
 // adding API connection for weather
 
