@@ -1,4 +1,5 @@
 //changing current day and time
+
 let now = new Date();
 
 let days = [
@@ -47,11 +48,27 @@ currentTime.innerHTML = `${hours}:${minutes}`;
 
 //changing submited city
 
+function newCityTemp(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let cityCelsius = document.querySelector("#current-temperature");
+  cityCelsius.innerHTML = temperature;
+}
+
 function citySearch(event) {
   event.preventDefault();
   let cityInput = document.querySelector(".searchEngine");
   let currentCity = document.querySelector(".cityName");
+
   currentCity.innerHTML = cityInput.value;
+
+  let cityToUrl = cityInput.value;
+
+  let apiUrlCity = `${apiEndpoint}q=${cityToUrl}&appid=${apiKey}&units=${unit}`;
+
+  console.log(cityToUrl);
+  console.log(apiUrlCity);
+
+  axios.get(apiUrlCity).then(newCityTemp);
 }
 
 let searchEngine = document.querySelector(".location-elements");
@@ -64,12 +81,12 @@ function CtoF(celsius) {
 }
 
 function celciusFunction() {
-  let currentCelcius = document.querySelector("#currentTemperature");
+  let currentCelcius = document.querySelector("#current-temperature");
   currentCelcius.innerHTML = 15;
 }
 
 function fahrenheitFunction() {
-  let currentCelcius = document.querySelector("#currentTemperature");
+  let currentCelcius = document.querySelector("#current-temperature");
   currentCelcius.innerHTML = CtoF(15);
 }
 
@@ -78,3 +95,29 @@ celsiusLink.addEventListener("click", celciusFunction);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", fahrenheitFunction);
+
+// adding API connection for weather
+
+function ShowTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+
+  let currentTemp = document.querySelector("#current-temperature");
+  currentTemp.innerHTML = temperature;
+
+  let currentCity = document.querySelector(".cityName");
+  currentCity.innerHTML = response.data.name;
+}
+
+function handlePosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  let apiUrlLocal = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrlLocal).then(ShowTemperature);
+}
+
+navigator.geolocation.getCurrentPosition(handlePosition);
+let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
+let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
+let unit = `metric`;

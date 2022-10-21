@@ -18,16 +18,16 @@ body {
   margin-top: 30px;
 }
 .searchEngine,
-.searchButton,
-.locationButton {
+.search-button,
+.location-button {
   font-size: 20px;
   line-height: 50px;
   border: none;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
 }
-.searchButton,
-.locationButton {
+.search-button,
+.location-button {
   background: none;
   border-radius: 25px;
 }
@@ -41,7 +41,7 @@ body {
   width: 100%;
   padding-left: 20px;
 }
-.searchButton {
+.search-button {
   padding: 1px 50px;
   margin-right: 0;
   border: 1px solid rgb(64, 119, 64);
@@ -52,7 +52,7 @@ body {
   );
   color: #fefffc;
 }
-.locationButton {
+.location-button {
   color: #102b1c;
   padding: 1px 20px;
   border: 1px solid linear-gradient(to top, #7b8f7d 0%, #deecdd 100%);
