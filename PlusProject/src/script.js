@@ -70,67 +70,56 @@ celsiusLink.addEventListener("click", celciusFunction);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", fahrenheitFunction);
 
-//changing submited city
+//changing submited city and it's temperature based on API data
 
-function newCityTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let cityCelsius = document.querySelector("#current-temperature");
-  cityCelsius.innerHTML = temperature;
+function newCityData(response) {
+  document.querySelector("#current-temperature").innerHTML = Math.round(
+    response.data.main.temp
+  ); // takes temperature value from the API data and puts in the #current-temperature
+  document.querySelector(".cityName").innerHTML = response.data.name; //takes city name from the API data and puts in the .cityName
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity; //takes city's humidity and puts in the #humidity
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  ); // takes wind speed of the city and puts it in the #wind
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main; //takes description of the city data and puts it in #description
 }
 
-function citySearch(event) {
+function search(cityToUrl) {
+  let apiUrlCity = `${apiEndpoint}q=${cityToUrl}&appid=${apiKey}&units=${unit}`; //city API link
+  axios.get(apiUrlCity).then(newCityData);
+}
+
+function handleCitySubmit(event) {
   event.preventDefault();
-  let cityInput = document.querySelector(".searchEngine");
-  let currentCity = document.querySelector(".cityName");
-
-  currentCity.innerHTML = cityInput.value;
-
-  let cityToUrl = cityInput.value;
-
-  let apiUrlCity = `${apiEndpoint}q=${cityToUrl}&appid=${apiKey}&units=${unit}`;
-
-  console.log(cityToUrl);
-  console.log(apiUrlCity);
-
-  axios.get(apiUrlCity).then(newCityTemp);
+  let cityToUrl = document.querySelector(".searchEngine").value; //takes value from search engine input and puts it in cityToUrl
+  search(cityToUrl);
 }
 
 let searchEngine = document.querySelector(".location-elements");
-searchEngine.addEventListener("submit", citySearch);
+searchEngine.addEventListener("submit", handleCitySubmit);
 
-// clicking on location button
-
-function yourLocation(event) {
-  event.preventDefault();
-  console.log("here is your location");
-  navigator.geolocation.getCurrentPosition(handlePosition);
-}
-
-let locationButton = document.querySelector("#location-button");
-locationButton.addEventListener("click", yourLocation);
-
-// adding API connection for weather
-
-function ShowTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-
-  let currentTemp = document.querySelector("#current-temperature");
-  currentTemp.innerHTML = temperature;
-
-  let currentCity = document.querySelector(".cityName");
-  currentCity.innerHTML = response.data.name;
-}
+// searching for your current location (button)
 
 function handlePosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-
   let apiUrlLocal = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-
-  axios.get(apiUrlLocal).then(ShowTemperature);
+  axios.get(apiUrlLocal).then(newCityData);
 }
 
-navigator.geolocation.getCurrentPosition(handlePosition);
+function getYourLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition); //goes to the same function as city search
+}
+
+let locationButton = document.querySelector("#location-button"); // selects your location button in html
+locationButton.addEventListener("click", getYourLocation); // action on click
+
+// adding API connection for weather
+
 let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
 let apiKey = "2daf65f0cdaa917f11026e8a128ce271";
 let unit = `metric`;
+
+search("Seattle"); // shows random city (in this case it's Seattle) on page load
